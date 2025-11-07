@@ -20,13 +20,13 @@ fun FormScreen(
     dataViewModel: DataViewModel,
     onSubmitButtonClicked: () -> Unit
 ) {
-    var namaInput by remember { mutableStateOf("") }
-    var alamatInput by remember { mutableStateOf("") }
-    var jenisKelaminInput by remember { mutableStateOf("") }
-    var statusInput by remember { mutableStateOf("") }
+        var namaInput by remember { mutableStateOf("") }
+        var alamatInput by remember { mutableStateOf("") }
+        var jenisKelaminInput by remember { mutableStateOf("") }
+        var statusInput by remember { mutableStateOf("") }
 
-    val genderOptions = listOf("Laki-laki", "Perempuan")
-    val statusOptions = listOf("Janda", "Lajang", "Duda")
+        val genderOptions = listOf("Laki-laki", "Perempuan")
+        val statusOptions = listOf("Janda", "Lajang", "Duda")
 
     Box(
         modifier = Modifier
