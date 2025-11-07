@@ -49,6 +49,11 @@ fun AppNavigation(modifier: Modifier = Modifier) {
         startDestination = AppRoutes.WELCOME,
         modifier = modifier
     ) {
+        composable(AppRoutes.WELCOME) {
+            WelcomeScreen(
+                onNextButtonClicked = { navController.navigate(AppRoutes.LIST) }
+            )
+        }
 
     }
 }
