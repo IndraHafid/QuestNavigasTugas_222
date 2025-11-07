@@ -32,6 +32,21 @@ fun ListScreen(
         Text("List Daftar Peserta", style = MaterialTheme.typography.headlineMedium)
         Spacer(modifier = Modifier.height(24.dp))
 
+        if (uiState.nama.isNotBlank()) {
+            Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                InfoCard(label = "NAMA LENGKAP", value = uiState.nama)
+                InfoCard(label = "JENIS KELAMIN", value = uiState.jenisKelamin)
+                InfoCard(label = "STATUS PERKAWINAN", value = uiState.status)
+                InfoCard(label = "ALAMAT", value = uiState.alamat)
+            }
+        } else {
+            Box(
+                modifier = Modifier.weight(1f),
+                contentAlignment = Alignment.Center
+            ) {
+                Text("Belum ada data peserta.",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = Color.Gray)
+            }
+        }
 
-    }
-}
