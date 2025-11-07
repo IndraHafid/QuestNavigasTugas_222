@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">QuestNavigasTugas_222</string>
+    <string name="welcome_title">Selamat Datang</string>
+    <string name="developer_name">Indra Hafid Saputra</string>
+    <string name="developer_id">20230140222</string>
+    <string name="submit_button">Submit</string>
+
 </resources>
