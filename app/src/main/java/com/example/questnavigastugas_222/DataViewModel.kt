@@ -1,6 +1,7 @@
 package com.example.questnavigastugas_222
 
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 
 data class DataPeserta(
     val nama: String = "",
@@ -10,5 +11,7 @@ data class DataPeserta(
 )
 
 class DataViewModel : ViewModel() {
+    private val _uiState = MutableStateFlow(DataPeserta())
+
 
 }
