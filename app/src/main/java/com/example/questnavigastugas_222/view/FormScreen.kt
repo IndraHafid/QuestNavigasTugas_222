@@ -56,7 +56,64 @@ fun FormScreen(
                 )
                 Spacer(modifier = Modifier.height(24.dp))
 
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                elevation = CardDefaults.cardElevation(8.dp)
+            ) {
+                Column(
+                    modifier = Modifier.padding(20.dp),
+                    horizontalAlignment = Alignment.Start,
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    OutlinedTextField(
+                        value = namaInput,
+                        onValueChange = { namaInput = it },
+                        label = { Text("Nama Lengkap") },
+                        modifier = Modifier.fillMaxWidth()
+                    )
 
+                    Text("Jenis Kelamin", style = MaterialTheme.typography.labelMedium, color = Color.Gray)
+                    Row {
+                        genderOptions.forEach { item ->
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .selectable(
+                                        selected = (jenisKelaminInput == item),
+                                        onClick = { jenisKelaminInput = item }
+                                    )
+                                    .padding(end = 16.dp)
+                            ) {
+                                RadioButton(selected = (jenisKelaminInput == item), onClick = { jenisKelaminInput = item })
+                                Text(item)
+                            }
+                        }
+                    }
+
+                    Text("Status Perkawinan", style = MaterialTheme.typography.labelMedium, color = Color.Gray)
+                    statusOptions.forEach { item ->
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.selectable(
+                                selected = (statusInput == item),
+                                onClick = { statusInput = item }
+                            )
+                        ) {
+                            RadioButton(selected = (statusInput == item), onClick = { statusInput = item })
+                            Text(item, modifier = Modifier.padding(start = 4.dp))
+                        }
+                    }
+
+                    OutlinedTextField(
+                        value = alamatInput,
+                        onValueChange = { alamatInput = it },
+                        label = { Text("Alamat Lengkap") },
+                        modifier = Modifier.fillMaxWidth()
+                    )
+
+
+                }
+            }
         }
     }
 }
