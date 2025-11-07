@@ -1,5 +1,7 @@
 package com.example.questnavigastugas_222
 
+import androidx.lifecycle.ViewModel
+
 data class DataPeserta(
     val nama: String = "",
     val alamat: String = "",
@@ -7,3 +9,6 @@ data class DataPeserta(
     val status: String = ""
 )
 
+class DataViewModel : ViewModel() {
+
+}
