@@ -17,6 +17,12 @@ import com.example.questnavigastugas_222.view.FormScreen
 import com.example.questnavigastugas_222.view.ListScreen
 import com.example.questnavigastugas_222.view.WelcomeScreen
 
+object AppRoutes {
+    const val WELCOME = "welcome"
+    const val LIST = "list"
+    const val FORM = "form"
+}
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,3 +38,4 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
