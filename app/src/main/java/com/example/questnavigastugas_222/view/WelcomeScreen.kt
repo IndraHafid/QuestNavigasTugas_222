@@ -2,6 +2,7 @@ package com.example.questnavigastugas_222.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -47,6 +48,11 @@ fun WelcomeScreen(onNextButtonClicked: () -> Unit) {
             )
         }
 
-
+        Button(
+            onClick = onNextButtonClicked,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(stringResource(id = R.string.submit_button))
+        }
     }
 }
