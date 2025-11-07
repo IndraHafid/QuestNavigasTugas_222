@@ -111,7 +111,24 @@ fun FormScreen(
                         modifier = Modifier.fillMaxWidth()
                     )
 
+                    Spacer(modifier = Modifier.height(8.dp))
 
+                    Button(
+                        modifier = Modifier.fillMaxWidth().height(50.dp),
+                        enabled = namaInput.isNotBlank() && alamatInput.isNotBlank() && jenisKelaminInput.isNotBlank() && statusInput.isNotBlank(),
+                        onClick = {
+                            val dataBaru = DataPeserta(
+                                nama = namaInput,
+                                alamat = alamatInput,
+                                jenisKelamin = jenisKelaminInput,
+                                status = statusInput
+                            )
+                            dataViewModel.setData(dataBaru)
+                            onSubmitButtonClicked()
+                        }
+                    ) {
+                        Text(stringResource(id = R.string.submit_button))
+                    }
                 }
             }
         }
