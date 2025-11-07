@@ -2,6 +2,7 @@ package com.example.questnavigastugas_222.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -67,4 +68,25 @@ fun ListScreen(
         }
     }
 }
-
+@Composable
+fun InfoCard(label: String, value: String) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(4.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.labelSmall,
+                color = Color.Gray
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = value,
+                style = MaterialTheme.typography.bodyLarge
+            )
+        }
+    }
+}
