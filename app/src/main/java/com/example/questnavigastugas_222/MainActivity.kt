@@ -54,6 +54,21 @@ fun AppNavigation(modifier: Modifier = Modifier) {
                 onNextButtonClicked = { navController.navigate(AppRoutes.LIST) }
             )
         }
+        composable(AppRoutes.LIST) {
+            ListScreen(
+                dataViewModel = viewModel,
+                onHomeButtonClicked = {
+                    navController.popBackStack(AppRoutes.WELCOME, inclusive = false)
+                },
+                onFormButtonClicked = { navController.navigate(AppRoutes.FORM) }
+            )
+        }
 
+        composable(AppRoutes.FORM) {
+            FormScreen(
+                dataViewModel = viewModel,
+                onSubmitButtonClicked = { navController.popBackStack() }
+            )
+        }
     }
 }
