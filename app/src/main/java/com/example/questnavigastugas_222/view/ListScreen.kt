@@ -2,6 +2,7 @@ package com.example.questnavigastugas_222.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -19,7 +20,7 @@ fun ListScreen(
     onHomeButtonClicked: () -> Unit,
     onFormButtonClicked: () -> Unit
 ) {
-    val uiState by dataViewModel.uiState.collectAsState()
+        val uiState by dataViewModel.uiState.collectAsState()
 
     Column(
         modifier = Modifier
