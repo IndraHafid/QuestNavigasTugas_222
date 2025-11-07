@@ -39,3 +39,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun AppNavigation(modifier: Modifier = Modifier) {
+    val navController = rememberNavController()
+    val viewModel: DataViewModel = viewModel()
+
+    NavHost(
+        navController = navController,
+        startDestination = AppRoutes.WELCOME,
+        modifier = modifier
+    ) {
+
+    }
+}
